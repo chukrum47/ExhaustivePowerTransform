@@ -1,10 +1,10 @@
 <center><h2>Exhaustive Power Transformation</h2></center>
 
 
-###Description
+### Description
 Exhaustively try all power transformations, within a given range, for a data set.
 
-###Usage
+### Usage
 ```
 ExhaustivePowerTransform( x, 
                           y = NA, 
@@ -22,7 +22,7 @@ ExhaustivePowerTransform( x,
                           roundDigits = 3 )
 ```
 
-###Arguments
+### Arguments
 `x` A vector of values. If a model is created, this vector will become the independent variable. Must be specified.  
 
 `y` A vector of values. If a model is created, this vector will become the dependent variable. Default is NA.  
@@ -51,7 +51,7 @@ ExhaustivePowerTransform( x,
 
 `roundDigits` The number of decimals to which each score (as determined by the `type`) is rounded, for purposes of choosing colors for the heatmap. Default is 3.  
 
-###Details
+### Details
 
 The following packages are required for the function to work: `nortest`, `fBasics`, `gplots`, `car`, and `lmtest`.
 
@@ -96,13 +96,13 @@ Whenever the power transformation is 0, a natural log transformation is applied 
 
 Disclaimer: this function is designed to be a tool to help automate the process of finding a useful power for transformations, and is not meant to be a replacement for manual analysis: all suggested power transformations should be manually checked as well to ensure. The onus is on the user to ensure that a given transformation is genuinely useful, as opposed to simply passing a test.
 
-###Value
+### Value
 
 A data frame is returned with three columns: `X`, `Y`, and `Score`, where `Score` is the resulting value (either r^2 or p-value) of the test when run on vectors `x` and `y` using the powers given in column `X` and column `Y`. The data frame is sorted in descending order by the `Score` column, and so the 'optimal' transformation is in the first row.  
 
 If `makeHeatmap` is set to `True`, then a heatmap is also created, with a horizontal and vertical line added to indicate the location of the maximum score.  
 
-###Examples
+### Examples
 
 ```{r eval=F, tidy=T}
 #Load Boston dataset from the MASS package
